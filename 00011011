@@ -1,4 +1,33 @@
-27.1b.33=00011011
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversão para HTML5</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        pre {
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Dados Convertidos</h1>
+
+    <pre>
+27.1b.33 = 00011011
 new_start
 https://www.yyyyyyy.info/
-input:8080+forcer=00110011 01001001 00101111 01000001 01010100 01001100 01000001
+input:8080 + forcer = 00110011 01001001 00101111 01000001 01010100 01001100 01000001
+    </pre>
+
+</body>
+</html>
