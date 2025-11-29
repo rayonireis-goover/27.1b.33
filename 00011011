@@ -20,15 +20,31 @@
 </head>
 <body>
 
-    <h1>Dados Convertidos</h1>
+    <header>
+        <h1>Dados Convertidos</h1>
+        <p lang="pt-BR">Conjunto de dados estático — arquivo de exemplo que mostra uma conversão/mapa de dados.</p>
+    </header>
 
-    <pre>
-27.1b.33 = 00011011
+    <main>
+        <section aria-labelledby="dados-convertidos">
+            <h2 id="dados-convertidos" class="visually-hidden">Conteúdo convertido</h2>
+            <pre aria-label="bloco de dados convertidos" role="document">27.1b.33 = 00011011
 new_start
 submit=https://www.yyyyyyy.info/
 submit=https://2600.com/
 input:8080 + forcer = 00110011 01001001 00101111 01000001 01010100 01001100 01000001
-    </pre>
+</pre>
+            <p class="note">Observação: este repositório contém arquivos estáticos; evite executar URLs sem autorização explícita do mantenedor.</p>
+        </section>
+    </main>
 
 </body>
+    <script>
+        // Acessibilidade mínima: ajuda a esconder títulos visuais quando necessário.
+        (function(){
+            var style = document.createElement('style');
+            style.innerHTML = '.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap;} .note{font-size:0.9rem;color:#333;opacity:.85;margin-top:12px;}';
+            document.head.appendChild(style);
+        })();
+    </script>
 </html>
