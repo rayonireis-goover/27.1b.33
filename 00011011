@@ -16,6 +16,13 @@
             border-radius: 8px;
             box-shadow: 0 0 5px rgba(0,0,0,0.1);
         }
+        #resultado {
+            white-space: pre-wrap;
+            background: #fff;
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
     </style>
 </head>
 <body>
@@ -25,10 +32,28 @@
     <pre>
 27.1b.33 = 00011011
 new_start
-submit=https://www.yyyyyyy.info/
-submit=https://2600.com/
-input:8080 + forcer = 00110011 01001001 00101111 01000001 01010100 01001100 01000001
+submit=2606:4700:3031::ac43:c364
+submit=166.84.5.162
+input:21 + forcer = 00110011 01001001 00101111 01000001 01010100 01001100 01000001
     </pre>
+
+    <h2>Testar FTP</h2>
+    <input type="text" id="ftp" placeholder="ftp.seuservidor.com">
+    <button onclick="testarFTP()">Ping FTP</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        async function testarFTP() {
+            const host = document.getElementById("ftp").value;
+            document.getElementById("resultado").textContent = "Testando...";
+            
+            const resp = await fetch("/testar-ftp?host=" + encodeURIComponent(host));
+            const texto = await resp.text();
+            
+            document.getElementById("resultado").textContent = texto;
+        }
+    </script>
 
 </body>
 </html>
