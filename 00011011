@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversão para HTML5</title>
+    <title>{{ titulo or "Conversão para HTML5" }}</title>
+
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -30,15 +31,13 @@
     <h1>Dados Convertidos</h1>
 
     <pre>
-27.1b.33 = 00011011
-new_start
-submit=https://www.yyyyyyy.info/
-submit=https://2600.com/
-input:21 + forcer = 00110011 01001001 00101111 01000001 01010100 01001100 01000001
+{{ dados_convertidos }}
     </pre>
 
     <h2>Testar FTP</h2>
+
     <input type="text" id="ftp" placeholder="ftp.seuservidor.com">
+
     <button onclick="testarFTP()">Ping FTP</button>
 
     <div id="resultado"></div>
@@ -47,10 +46,10 @@ input:21 + forcer = 00110011 01001001 00101111 01000001 01010100 01001100 010000
         async function testarFTP() {
             const host = document.getElementById("ftp").value;
             document.getElementById("resultado").textContent = "Testando...";
-            
-            const resp = await fetch("/testar-ftp?host=" + encodeURIComponent(host));
+
+            const resp = await fetch("{{ url_for('testar_ftp') }}?host=" + encodeURIComponent(host));
             const texto = await resp.text();
-            
+
             document.getElementById("resultado").textContent = texto;
         }
     </script>
