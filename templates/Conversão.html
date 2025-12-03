@@ -1,0 +1,24 @@
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    dados = """27.1b.33 = 00011011
+new_start
+submit=https://www.yyyyyyy.info/
+submit=https://2600.com/
+input:21 + forcer = 00110011 01001001 00101111 01000001 01010100 01001100 01000001"""
+
+    return render_template(
+        "conversao.html",
+        titulo="Conversão para HTML5",
+        dados_convertidos=dados
+    )
+
+@app.route("/testar-ftp")
+def testar_ftp():
+    host = request.args.get("host")
+
+    # Aqui seria implementado seu teste de conexão FTP real
+    return f"Teste de FTP para '{host}' concluído."
